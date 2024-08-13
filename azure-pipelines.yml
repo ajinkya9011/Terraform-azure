@@ -15,7 +15,7 @@ steps:
     provider: 'azurerm'
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/VM'
-    backendServiceArm: 'Visual Studio Enterprise Subscription (e742faf7-99c3-46f9-9939-22d3f0e74d44)'
+    backendServiceArm: 'Visual Studio Enterprise Subscription /'
     backendAzureRmResourceGroupName: 'backend-tf'
     backendAzureRmStorageAccountName: 'ajinkyatfbackendstorage'
     backendAzureRmContainerName: 'terraform-state'
@@ -34,7 +34,7 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/VM'
     outputTo: 'console'
     customCommand: 'fmt'
-    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription (e742faf7-99c3-46f9-9939-22d3f0e74d44)'
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription /'
 
 - task: TerraformTaskV4@4
   displayName: tf plan
@@ -43,7 +43,7 @@ steps:
     command: 'plan'
     workingDirectory: '$(System.DefaultWorkingDirectory)/VM'
     commandOptions: '--out=tf.plan'
-    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription (e742faf7-99c3-46f9-9939-22d3f0e74d44)'
+    environmentServiceNameAzureRM: 'Visual Studio Enterprise Subscription /'
 - task: ArchiveFiles@2
   displayName: Archive files
   inputs:
